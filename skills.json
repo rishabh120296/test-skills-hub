@@ -1,0 +1,71 @@
+{
+  "manifestVersion": 1,
+  "skills": [
+    {
+      "name": "gpio-controller",
+      "displayName": "GPIO Controller",
+      "version": "1.0.0",
+      "owner": "qualcomm-developer",
+      "description": "Control GPIO pins on Qualcomm embedded boards — read/write digital I/O, configure pull resistors, and set up interrupt handlers.",
+      "agents": ["claude", "codex"],
+      "category": "hardware",
+      "tags": ["gpio", "hardware", "embedded", "iot", "pins", "digital-io"],
+      "platforms": ["linux", "qcs6490", "rb3gen2"],
+      "useCases": [
+        "Toggle an LED connected to a GPIO pin",
+        "Read a button or sensor state",
+        "Set up edge-triggered interrupts on a GPIO line",
+        "Configure input pull-up or pull-down resistors"
+      ],
+      "path": "skills/gpio-controller",
+      "docPath": "skills/gpio-controller/SKILL.md",
+      "files": ["skills/gpio-controller/**"],
+      "license": "MIT",
+      "homepage": "https://github.com/qualcomm-developer/qualcomm-skills"
+    },
+    {
+      "name": "wifi-manager",
+      "displayName": "Wi-Fi Manager",
+      "version": "1.2.0",
+      "owner": "qualcomm-developer",
+      "description": "Manage Wi-Fi connections using wpa_supplicant or NetworkManager — scan for networks, connect with WPA2/WPA3, and monitor link quality.",
+      "agents": ["claude"],
+      "category": "connectivity",
+      "tags": ["wifi", "networking", "wpa-supplicant", "network-manager", "wireless"],
+      "platforms": ["linux", "ubuntu"],
+      "useCases": [
+        "Connect to a WPA2 or WPA3 protected network",
+        "Scan and list visible access points",
+        "Check current link quality and RSSI",
+        "Automate network reconnection on boot"
+      ],
+      "path": "skills/wifi-manager",
+      "docPath": "skills/wifi-manager/SKILL.md",
+      "files": ["skills/wifi-manager/**"],
+      "license": "Apache-2.0",
+      "homepage": "https://github.com/qualcomm-developer/qualcomm-skills"
+    },
+    {
+      "name": "uart-bridge",
+      "displayName": "UART Serial Bridge",
+      "version": "0.9.1",
+      "owner": "qualcomm-developer",
+      "description": "Set up and communicate over UART serial ports — configure baud rate, parity, and flow control, and send/receive raw bytes or ASCII lines.",
+      "agents": ["claude", "codex"],
+      "category": "hardware",
+      "tags": ["uart", "serial", "hardware", "embedded", "communication", "rs232"],
+      "platforms": ["linux", "qcs6490"],
+      "useCases": [
+        "Open a UART port at a specific baud rate",
+        "Send and receive ASCII commands over serial",
+        "Configure hardware flow control (RTS/CTS)",
+        "Log serial output to a file"
+      ],
+      "path": "skills/uart-bridge",
+      "docPath": "skills/uart-bridge/SKILL.md",
+      "files": ["skills/uart-bridge/**"],
+      "license": "MIT",
+      "minIdeVersion": "1.5.0"
+    }
+  ]
+}
