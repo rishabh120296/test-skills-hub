@@ -10,7 +10,9 @@
       "agents": ["claude", "codex"],
       "category": "hardware",
       "tags": ["gpio", "hardware", "embedded", "iot", "pins", "digital-io"],
-      "platforms": ["linux", "qcs6490", "rb3gen2"],
+      "hostOs": ["linux"],
+      "targetOs": ["qualcomm-linux-2.0", "ubuntu-desktop-22.04"],
+      "devkits": ["iq-9075", "rb3-gen2", "qcs6490-rb2"],
       "useCases": [
         "Toggle an LED connected to a GPIO pin",
         "Read a button or sensor state",
@@ -21,7 +23,8 @@
       "docPath": "skills/gpio-controller/SKILL.md",
       "files": ["skills/gpio-controller/**"],
       "license": "MIT",
-      "homepage": "https://github.com/qualcomm-developer/qualcomm-skills"
+      "homepage": "https://github.com/qualcomm-developer/qualcomm-skills",
+      "triggers": []
     },
     {
       "name": "wifi-manager",
@@ -31,8 +34,16 @@
       "description": "Manage Wi-Fi connections using wpa_supplicant or NetworkManager — scan for networks, connect with WPA2/WPA3, and monitor link quality.",
       "agents": ["claude"],
       "category": "connectivity",
-      "tags": ["wifi", "networking", "wpa-supplicant", "network-manager", "wireless"],
-      "platforms": ["linux", "ubuntu"],
+      "tags": [
+        "wifi",
+        "networking",
+        "wpa-supplicant",
+        "network-manager",
+        "wireless"
+      ],
+      "hostOs": ["linux", "windows", "macos"],
+      "targetOs": ["qualcomm-linux-2.0", "ubuntu-desktop-22.04"],
+      "devkits": ["iq-9075", "rb3-gen2"],
       "useCases": [
         "Connect to a WPA2 or WPA3 protected network",
         "Scan and list visible access points",
@@ -43,7 +54,12 @@
       "docPath": "skills/wifi-manager/SKILL.md",
       "files": ["skills/wifi-manager/**"],
       "license": "Apache-2.0",
-      "homepage": "https://github.com/qualcomm-developer/qualcomm-skills"
+      "homepage": "https://github.com/qualcomm-developer/qualcomm-skills",
+      "triggers": [
+        {"action": "suggest-install", "tool": "list_wifi_networks"},
+        {"action": "suggest-install", "tool": "connect_wifi"},
+        {"action": "suggest-uninstall", "tool": "disconnect_wifi"}
+      ]
     },
     {
       "name": "uart-bridge",
@@ -53,8 +69,17 @@
       "description": "Set up and communicate over UART serial ports — configure baud rate, parity, and flow control, and send/receive raw bytes or ASCII lines.",
       "agents": ["claude", "codex"],
       "category": "hardware",
-      "tags": ["uart", "serial", "hardware", "embedded", "communication", "rs232"],
-      "platforms": ["linux", "qcs6490"],
+      "tags": [
+        "uart",
+        "serial",
+        "hardware",
+        "embedded",
+        "communication",
+        "rs232"
+      ],
+      "hostOs": ["linux", "windows"],
+      "targetOs": ["qualcomm-linux-2.0"],
+      "devkits": ["iq-9075", "qcs6490-rb2"],
       "useCases": [
         "Open a UART port at a specific baud rate",
         "Send and receive ASCII commands over serial",
@@ -65,7 +90,10 @@
       "docPath": "skills/uart-bridge/SKILL.md",
       "files": ["skills/uart-bridge/**"],
       "license": "MIT",
-      "minIdeVersion": "1.5.0"
+      "minIdeVersion": "1.5.0",
+      "triggers": [
+        {"action": "suggest-install", "tool": "list_devices"},
+      ]
     }
   ]
 }
