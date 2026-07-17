@@ -92,7 +92,7 @@
       "license": "MIT",
       "minIdeVersion": "1.5.0",
       "triggers": [
-        {"action": "suggest-install", "tool": "list_devices"},
+        {"action": "suggest-install", "tool": "list_devices"}
       ]
     }
   ]
